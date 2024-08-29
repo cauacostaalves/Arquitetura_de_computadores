@@ -1,0 +1,52 @@
+Guias_04_Extras
+
+06.) Dada a expressão em Verilog abaixo, identificar a expressão SoP equivalente:
+module FXYZ (output S1, input X, input Y, input Z);
+assign s1 = ( ~X | Y | ~Z ) & ( X | ~Y | ~Z);
+endmodule // FXYZ
+
+Expressão Booleana:
+S1 = (X' + Y + Z) . (X + Y' + Z') . (X + Y + Z')
+
+Expandir e simplificar expressão:
+(X'X . (X + Y + Z') + X'Y' . (X + Y + Z') + X'Z' . (X + Y + Z')
+
+0 . (X + Y + Z') + X'Y' . (X + Y + Z') + X'Z' . (X + Y + Z')
+X'Y' . X + X'Y' . Y + X'Y' . Z' + X'Z' . X + X'Z' . Y + X'Z' . Z'
+X'Y' + X'Z'
+
+Tabela verdade:
+Posição X  Y  Z  X'  Y'  Z'   X'Y'   X'Z'  X'Y' + X'Z'  SoP
+0       0  0  0  1   1   1     1      1         1        1   
+1       0  0  1  1   1   0     1      0         1        1  
+2       0  1  0  1   0   1     0      1         1        1  
+3       0  1  1  1   0   0     0      0         0        0  
+4       1  0  0  0   1   1     0      0         0        0  
+5       1  0  1  0   1   0     0      0         0        0  
+6       1  1  0  0   0   1     0      0         0        0  
+7       1  1  1  0   0   0     0      0         0        0  
+
+
+
+
+07.) Dada a expressão em Verilog abaixo, identificar a expressão PoS equivalente:
+module fxyz (output s1, input x, input y, input z);
+assign s1 = ( ~x & ~y & z ) | ( x & y & ~z);
+endmodule // fxyz
+
+Expressão Booleana:
+s1 = (~x & ~y & z) | (x & y & ~z)
+
+Expressao Pos Final:
+s1 = (x + y + z) . (x + y' + z) . (x' + y + z') . (x' + y' + z')
+
+Tabela verdade:
+Posição x  y  z  x'  y'  z'  x + y + z  x + y' + z  x' + y + z'  x' + y' + z'   PoS
+0       0  0  0  1   1   1      1          1            1            1           1
+1       0  0  1  1   1   0      1          1            1            1           1
+2       0  1  0  1   0   1      1          0            1            1           0
+3       0  1  1  1   0   0      1          1            1            1           1
+4       1  0  0  0   1   1      1          1            0            1           0
+5       1  0  1  0   1   0      1          1            0            1           0
+6       1  1  0  0   0   1      1          0            1            1           0
+7       1  1  1  0   0   0      1          1            1            1           1

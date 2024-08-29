@@ -1,0 +1,77 @@
+Leis e Regras da Álgebra Booleana
+
+1. Leis Básicas
+- Identidade:
+  A ⋅ 1 = A
+  A + 0 = A
+- Anulação:
+  A ⋅ 0 = 0
+  A + 1 = 1
+
+2. Leis da Idempotência
+- Idempotência da Conjunção:
+  A ⋅ A = A
+- Idempotência da Disjunção:
+  A + A = A
+
+3. Leis da Complementação
+- Complementação:
+  A ⋅ A' = 0
+  A + A' = 1
+
+4. Leis da Distributividade
+- Distributividade da Conjunção sobre a Disjunção:
+  A ⋅ (B + C) = (A ⋅ B) + (A ⋅ C)
+- Distributividade da Disjunção sobre a Conjunção:
+  A + (B ⋅ C) = (A + B) ⋅ (A + C)
+
+5. Leis da Absorção
+- Absorção:
+  A + (A ⋅ B) = A
+  A ⋅ (A + B) = A
+
+6. Leis de De Morgan
+- Primeira Lei de De Morgan:
+  (A ⋅ B)' = A' + B'
+- Segunda Lei de De Morgan:
+  (A + B)' = A' ⋅ B'
+
+7. Leis da Comutatividade
+- Comutatividade da Conjunção:
+  A ⋅ B = B ⋅ A
+- Comutatividade da Disjunção:
+  A + B = B + A
+
+8. Leis da Associatividade
+- Associatividade da Conjunção:
+  (A ⋅ B) ⋅ C = A ⋅ (B ⋅ C)
+- Associatividade da Disjunção:
+  (A + B) + C = A + (B + C)
+
+Exemplos de Aplicação
+
+- Simplificação de Expressão:
+  A ⋅ (A + B) = A
+  (Uso da Lei da Absorção).
+
+- Aplicação de Leis de De Morgan:
+  (A ⋅ B)' = A' + B'
+  (Para simplificar expressões que contêm negações).
+
+- Uso da Distributividade:
+  A + (B ⋅ C) = (A + B) ⋅ (A + C)
+  (Distribui A sobre a conjunção B ⋅ C).
+
+Exemplos de Simplificação
+
+- Para a expressão:
+  (x' + y) + (x' ⋅ y)
+  Aplicar a Lei da Absorção:
+  (x' + y) + (x' ⋅ y) = x' + y
+
+- Para a expressão:
+  x ⋅ (x' + y)'
+  Aplicar as Leis de De Morgan:
+  (x' + y)' = x ⋅ y'
+  Então:
+  x ⋅ (x' + y)' = x ⋅ y'
