@@ -1,0 +1,110 @@
+Pontif�cia Universidade Cat�lica de Minas Gerais
+Pr�-Reitoria de Gradua��o
+
+Plano de Ensino    (3814 - 1� semestre de 2022)
+
+Curso: 38          -  Ci�ncia da Computa��o
+Disciplina: 50609  -  ARQUITETURA E ORGANIZA��O DE COMPUTADORES I
+Per�odo: 2
+
+Turno: MANH�
+
+Carga Hor�ria:
+TE�RICA  68  horas (GRADE 68)
+TOTAL    68  horas
+
+EMENTA
+
+[ ] Hist�rico. 
+[ ] Modelos para representa��o de dados e 
+    aritm�tica computacional em n�vel de m�quina. 
+[ ] Fun��es l�gicas: modelamento e 
+[ ] algoritmos para minimiza��o.
+[ ] Descri��o e s�ntese de elementos l�gicos combinacionais.
+[ ] Descri��o e s�ntese de elementos l�gicos sequenciais 
+[ ] e m�quinas de estados. 
+[ ] Unidades funcionais b�sicas de computadores e 
+[ ] introdu��o ao software b�sico. 
+[ ] Linguagens e 
+[ ] ferramentas para projeto e descri��o de hardware.
+
+
+UNIDADES DE ENSINO
+
+01. INTRODU��O              
+   (Teoria: 04h) (Executada: 02:00h)
+
+[ ] Sistemas de numera��o (decimal, bin�rio, octal e hexadecimal)
+[ ] Nota��o posicional 
+[ ] Convers�o entre bases
+[ ] Opera��es aritm�ticas em bin�rio e bases associadas
+[ ] Representa��o num�rica em ponto fixo e 
+[ ] em ponto flutuante
+[ ] Erros em representa��o num�rica
+[ ] Representa��o de letras e s�mbolos
+
+02. L�GICA BOOLEANA 
+   (Teoria: 08:00h) (Executada: 02:00h)
+
+[ ] �lgebra de proposi��es
+[ ] Aplica��es em circuitos l�gicos
+[ ] Propriedades e rela��es importantes
+[ ] Fun��es l�gicas simples e compostas
+
+03. MINIMIZA��O DE FUN��ES BOOLEANAS 
+   (Teoria: 08:00h )    (A Executar: 08:00h)
+
+[ ] Simplifica��es de circuitos
+[ ]   Simplifica��o alg�brica
+[ ]   Mapa de Veitch-Karnaugh
+[ ]   M�todo de Quine-McCluskey
+[ ]   Diagramas de Decis�o Bin�ria (BDD)
+
+04. AN�LISE E S�NTESE DE CIRCUITOS
+   (Teoria: 20:00h )    (A Executar: 20:00h)
+
+[ ] Circuitos combinacionais
+[ ] Circuitos sequenciais ass�ncronos e s�ncronos: latches e flip-flops
+[ ] Circuitos integrados: mem�rias, comparadores, ALUs etc.
+[ ] Dispositivos l�gicos program�veis (CPLD): ROMs, PALs, PLAs
+[ ] Outros dispositivos reconfigur�veis
+
+05. ARQUITETURA DE COMPUTADORES
+   (Teoria: 20:00h )    (A Executar: 20:00h)
+
+[ ] Tipos de computador
+[ ] Modelo de arquitetura de computador
+[ ]   Unidades de entrada e sa�da
+[ ]   Unidade l�gica e aritm�tica
+[ ]   Unidade de controle
+[ ]   Mem�ria principal
+[ ]   Vias de controle, de dados e de endere�os
+[ ] Microprocessadores
+[ ]   Blocos funcionais
+[ ]   Fun��es
+[ ]   Aspectos construtivos e sua evolu��o
+[ ]   Arquitetura do conjunto de instru��es
+
+06. DESCRI��O E SIMULA��O
+   (Teoria: 08:00h )    (A Executar: 08:00h)
+
+[ ] Simuladores e linguagens para descri��o de hardware
+[ ]   VERILOG
+[ ]   VHDL
+[ ]   SystemC
+[ ]   SystemVerilog
+
+___
+
+Monitoramento:
+
+Data:
+Respons�vel
+
+___
+
+Anota��es:
+
+
+
+
