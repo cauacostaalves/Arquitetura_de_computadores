@@ -1,0 +1,157 @@
+Aluno : Cauã Costa Alves
+Matricula : 855926
+
+1 ) Mapa de Veitch-Karnaugh de 3 elementos com mintermos(1):
+
+xy \~z  z  
+     0  1
+
+00  0   1    
+01  2   3
+11  6   7
+10  4   5
+
+a) f (x,y,z) = ∑ m ( 1, 6, 7 )
+
+xy \~z  z           (~x.~y.z)+ (x.y)
+     0  1
+
+00  0   1    
+01  0   0
+11  1   1
+10  0   0   
+
+b) f (x,y,z) = ∑ m ( 2, 4, 6 )
+
+xy \~z  z   (y.~z) + (x.~z)  
+     0  1
+
+00  0   0    
+01  1   0
+11  1   0
+10  1   0
+
+c) f (x,y,z) = ∑ m ( 1, 2, 5, 6 )
+
+xy \~z  z   (y.~z) + (~y.z) 
+     0  1
+
+00  0   1    
+01  1   0
+11  1   0
+10  0   1
+
+d) f (x,y,z) = ∑ m ( 1, 2, 4, 5 )
+
+xy \~z  z   (~y.z) + (~x.y.~z) + (x.~y) 
+     0  1   
+
+00  0   1    
+01  1   0
+11  0   0
+10  1   1
+
+e) f (x,y,z) = ∑ m ( 0, 3, 6, 7 )
+
+xy \~z  z    (~x.~y.~z) + (x.y) + (y.z)
+     0  1
+
+00  1   0    
+01  0   1
+11  1   1
+10  0   0
+
+
+2) Mapa de Veitch-Karnaugh de 3 elementos com maxtermos(0):
+
+XY \  Z  ~Z
+      0   1
+
+00    0   1  
+01    2   3
+11    6   7
+10    4   5
+
+a) F (X,Y,Z) = π M ( 1, 5, 7 )
+
+XY \         Z  ~Z     (Y+~Z) . (~X+~Z)
+             0   1
+
+XY     00    1   0  
+X~Y    01    1   1
+~X~Y   11    1   0
+~XY    10    1   0
+
+b) F (X,Y,Z) = π M ( 0, 4, 6 )
+
+XY \         Z  ~Z     (~X+Z) . (Y+Z)
+             0   1
+
+XY     00    0   1  
+X~Y    01    1   1
+~X~Y   11    0   1
+~XY    10    0   1
+
+c) F (X,Y,Z) = π M ( 1, 2, 3, 5 )
+
+XY \         Z  ~Z     (X+~Y) . (Y+~Z) 
+             0   1
+                                       
+XY     00    1   0   
+X~Y    01    0   0
+~X~Y   11    1   1
+~XY    10    1   0
+
+d) F (X,Y,Z) = π M ( 0, 3, 4, 7 )
+
+XY \         Z  ~Z     (Y+Z) . (~Y+~Z) 
+             0   1
+                                       
+XY     00    0   1   
+X~Y    01    1   0
+~X~Y   11    1   0
+~XY    10    0   1
+
+e) F (X,Y,Z) = π M ( 2, 3, 6, 7 )
+
+XY \         Z  ~Z     (~y)
+             0   1
+                                       
+XY     00    1   1   
+X~Y    01    0   0
+~X~Y   11    0   0
+~XY    10    1   1
+
+3) Mapa de Veitch-Karnaugh de 3 elementos com mintermos(1):
+
+    
+xy\ wz 
+           ~w~z ~wz  wz  w~z
+            00   01  11  10
+
+~x~y   00   0    1    3   2
+~xy    01   4    5    7   6
+xy     11   12   13   15  14
+x~y    10   8    9    11  10   
+
+a) f (x,y,w,z) = ∑ m ( 1, 2, 5, 8, 12, 13 ) Sop
+
+xy\ wz 
+           ~w~z ~wz  wz  w~z         ()
+            00   01  11  10
+
+~x~y   00   0    1    0   1
+~xy    01   0    1    0   0
+xy     11   1    1    0   0
+x~y    10   1    0    0   0
+
+b) f (x,y,w,z) = ∑ m ( 0, 1, 3, 5, 7, 13, 15 )
+
+xy\ wz 
+           ~w~z ~wz  wz  w~z
+            00   01  11  10
+
+~x~y   00   0    0    0   0
+~xy    01   0    0    0   0
+xy     11   0    0    0   0
+x~y    10   0    0    0   0
