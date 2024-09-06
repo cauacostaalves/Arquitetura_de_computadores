@@ -18,16 +18,16 @@ module test_Guia0605;
     reg  z; // Adicionando o sinal z
     wire s;  // Corrigido para wire s 
 
-    Guia0605 modulo05 (s, x, y, z); // Corrigindo o nome do módulo e a conexão dos sinais
+    Guia0605 modulo05 (s, x, y, z); 
 
 // ------------------------- parte principal 
     initial 
     begin : main 
         $display("Guia_0605 - Cauã Costa Alves - 855926"); 
         $display("Modulo da questão 5"); 
-        $display("   x    y    z    s"); // Corrigido para refletir a variável 's'
+        $display("   x    y    z    s"); 
         
-        $monitor("%4b %4b %4b %4b", x, y, z, s); // Corrigido para refletir a variável 's'
+        $monitor("%4b %4b %4b %4b", x, y, z, s); 
 
         x = 1'b0;  y = 1'b0;  z = 1'b0;
         #1      x = 1'b0;  y = 1'b1;  z = 1'b0;
