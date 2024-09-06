@@ -1,3 +1,4 @@
+Manuais do guia 06
 Aluno : Cauã Costa Alves
 Matricula : 855926
 
@@ -257,4 +258,25 @@ X~Y  01   1    0    0   0
 ~XY  10   1    1    0   1   
 
 
-5)
+05) Identificação do mapa de Veitch-Karnaugh usando mintermos :
+
+      
+xy \ z    z' z 
+          0  1  
+
+x'y'  00  0  0    f (x,y,z) = m (4,5,6)
+x'y   01  0  0    
+xy    11  1  0    simplificação: (x.z') + (x.y')
+xy'   10  1  1
+
+
+06) Identificação do mapa de Veitch-Karnaugh usando maxtermos :
+
+XY\ WZ 
+          WZ  W~Z ~W~Z ~WZ
+          00   01  11  10
+                             f(X,Y,W,Z) = M (0,1,2,3,4,5,6,7,15)
+XY   00   0    0    0   0    simplificação: (X + W) . (X + ~W) . (~Y + ~W + ~Z)
+X~Y  01   0    0    0   0
+~X~Y 11   1    1    0   1
+~XY  10   1    1    1   1        
