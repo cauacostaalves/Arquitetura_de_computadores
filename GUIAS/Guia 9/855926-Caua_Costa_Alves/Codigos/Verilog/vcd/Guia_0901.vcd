@@ -1,0 +1,59 @@
+$date
+	Friday Setember 11:24:22 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Guia_0901 $end
+$var wire 1 ! pulse $end
+$var wire 1 " trigger $end
+$scope module PG1 $end
+$var reg 1 ! pulse $end
+$scope begin pulse_gen $end
+$upscope $end
+$scope begin start $end
+$upscope $end
+$upscope $end
+$scope module TG1 $end
+$var reg 1 " trigger $end
+$scope begin trigger_gen $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope begin main $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0!
+0"
+$end
+#25
+1!
+#50
+0!
+#75
+1!
+#100
+0"
+#110
+1"
+#120
+0"
+#190
+1"
+#200
+0"
+#250
+1!
+#275
+0!
+#500
+$finish
