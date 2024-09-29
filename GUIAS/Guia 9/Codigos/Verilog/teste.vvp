@@ -1,0 +1,97 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5770bec965a0 .scope module, "test_equalityComparator" "test_equalityComparator" 2 31;
+ .timescale 0 0;
+v0x5770becaf9a0_0 .var "a", 4 0;
+v0x5770becafa60_0 .var "b", 4 0;
+v0x5770becafb30_0 .net "equal", 0 0, L_0x5770becb0980;  1 drivers
+S_0x5770bec96730 .scope module, "EC" "equalityComparator" 2 36, 2 10 0, S_0x5770bec965a0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "equal";
+    .port_info 1 /INPUT 5 "x";
+    .port_info 2 /INPUT 5 "y";
+L_0x5770becafc30 .functor XNOR 1, L_0x5770becafd30, L_0x5770becafe20, C4<0>, C4<0>;
+L_0x5770becaff60 .functor XNOR 1, L_0x5770becaffd0, L_0x5770becb00c0, C4<0>, C4<0>;
+L_0x5770becb01e0 .functor XNOR 1, L_0x5770becb0250, L_0x5770becb0340, C4<0>, C4<0>;
+L_0x5770becb0420 .functor XNOR 1, L_0x5770becb04c0, L_0x5770becb0560, C4<0>, C4<0>;
+L_0x5770becb06a0 .functor XNOR 1, L_0x5770becb0740, L_0x5770becb0830, C4<0>, C4<0>;
+L_0x5770becb0980/0/0 .functor AND 1, L_0x5770becafc30, L_0x5770becaff60, L_0x5770becb01e0, L_0x5770becb0420;
+L_0x5770becb0980/0/4 .functor AND 1, L_0x5770becb06a0, C4<1>, C4<1>, C4<1>;
+L_0x5770becb0980 .functor AND 1, L_0x5770becb0980/0/0, L_0x5770becb0980/0/4, C4<1>, C4<1>;
+v0x5770bec96960_0 .net *"_ivl_12", 0 0, L_0x5770becb0250;  1 drivers
+v0x5770becaead0_0 .net *"_ivl_14", 0 0, L_0x5770becb0340;  1 drivers
+v0x5770becaebb0_0 .net *"_ivl_17", 0 0, L_0x5770becb04c0;  1 drivers
+v0x5770becaec70_0 .net *"_ivl_19", 0 0, L_0x5770becb0560;  1 drivers
+v0x5770becaed50_0 .net *"_ivl_2", 0 0, L_0x5770becafd30;  1 drivers
+v0x5770becaee80_0 .net *"_ivl_22", 0 0, L_0x5770becb0740;  1 drivers
+v0x5770becaef60_0 .net *"_ivl_24", 0 0, L_0x5770becb0830;  1 drivers
+v0x5770becaf040_0 .net *"_ivl_4", 0 0, L_0x5770becafe20;  1 drivers
+v0x5770becaf120_0 .net *"_ivl_7", 0 0, L_0x5770becaffd0;  1 drivers
+v0x5770becaf200_0 .net *"_ivl_9", 0 0, L_0x5770becb00c0;  1 drivers
+v0x5770becaf2e0_0 .net "equal", 0 0, L_0x5770becb0980;  alias, 1 drivers
+v0x5770becaf3a0_0 .net "n1", 0 0, L_0x5770becafc30;  1 drivers
+v0x5770becaf460_0 .net "n2", 0 0, L_0x5770becaff60;  1 drivers
+v0x5770becaf520_0 .net "n3", 0 0, L_0x5770becb01e0;  1 drivers
+v0x5770becaf5e0_0 .net "n4", 0 0, L_0x5770becb0420;  1 drivers
+v0x5770becaf6a0_0 .net "n5", 0 0, L_0x5770becb06a0;  1 drivers
+v0x5770becaf760_0 .net "x", 4 0, v0x5770becaf9a0_0;  1 drivers
+v0x5770becaf840_0 .net "y", 4 0, v0x5770becafa60_0;  1 drivers
+L_0x5770becafd30 .part v0x5770becaf9a0_0, 0, 1;
+L_0x5770becafe20 .part v0x5770becafa60_0, 0, 1;
+L_0x5770becaffd0 .part v0x5770becaf9a0_0, 1, 1;
+L_0x5770becb00c0 .part v0x5770becafa60_0, 1, 1;
+L_0x5770becb0250 .part v0x5770becaf9a0_0, 2, 1;
+L_0x5770becb0340 .part v0x5770becafa60_0, 2, 1;
+L_0x5770becb04c0 .part v0x5770becaf9a0_0, 3, 1;
+L_0x5770becb0560 .part v0x5770becafa60_0, 3, 1;
+L_0x5770becb0740 .part v0x5770becaf9a0_0, 4, 1;
+L_0x5770becb0830 .part v0x5770becafa60_0, 4, 1;
+    .scope S_0x5770bec965a0;
+T_0 ;
+    %vpi_call 2 40 "$display", "Guia_0803 - Cau\303\243 Costa Alves - 855926" {0 0 0};
+    %vpi_call 2 41 "$display", "Testando o comparador de igualdade" {0 0 0};
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0x5770becaf9a0_0, 0, 5;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0x5770becafa60_0, 0, 5;
+    %delay 10, 0;
+    %vpi_call 2 45 "$display", "a = %b, b = %b => equal = %b", v0x5770becaf9a0_0, v0x5770becafa60_0, v0x5770becafb30_0 {0 0 0};
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v0x5770becaf9a0_0, 0, 5;
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v0x5770becafa60_0, 0, 5;
+    %delay 10, 0;
+    %vpi_call 2 48 "$display", "a = %b, b = %b => equal = %b", v0x5770becaf9a0_0, v0x5770becafa60_0, v0x5770becafb30_0 {0 0 0};
+    %pushi/vec4 2, 0, 5;
+    %store/vec4 v0x5770becaf9a0_0, 0, 5;
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v0x5770becafa60_0, 0, 5;
+    %delay 10, 0;
+    %vpi_call 2 51 "$display", "a = %b, b = %b => equal = %b", v0x5770becaf9a0_0, v0x5770becafa60_0, v0x5770becafb30_0 {0 0 0};
+    %pushi/vec4 27, 0, 5;
+    %store/vec4 v0x5770becaf9a0_0, 0, 5;
+    %pushi/vec4 27, 0, 5;
+    %store/vec4 v0x5770becafa60_0, 0, 5;
+    %delay 10, 0;
+    %vpi_call 2 54 "$display", "a = %b, b = %b => equal = %b", v0x5770becaf9a0_0, v0x5770becafa60_0, v0x5770becafb30_0 {0 0 0};
+    %pushi/vec4 31, 0, 5;
+    %store/vec4 v0x5770becaf9a0_0, 0, 5;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v0x5770becafa60_0, 0, 5;
+    %delay 10, 0;
+    %vpi_call 2 57 "$display", "a = %b, b = %b => equal = %b", v0x5770becaf9a0_0, v0x5770becafa60_0, v0x5770becafb30_0 {0 0 0};
+    %vpi_call 2 59 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Guia-0803.v";
