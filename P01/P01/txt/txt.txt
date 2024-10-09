@@ -1,0 +1,64 @@
+ARQ1 - Preparação 01
+Tema: Sistemas de Numeração e circuitos combinatórios
+ Nome: Iasmin Ferreira e Oliveira
+ Matricula: 854946
+
+Exercícios:
+01.) Dada tabela-verdade e o mapa de Veitch-Karnaugh abaixo:
+
+a) a'.b'.c.d' + a'.b.c'.d'+ a'.b.c.d + a.b'.c.d + a b c' d'
+
+b) (A+B+C+D).(A+B+C+D').(A+B+C'+D').(A+B'+C+D').(A+B'+C'+D).(A'+B'+C+D')(A'+B'+C+D').(A'+B'+C'+D).(A'+B+C+D).(A'+B+C+D').(A'+B+C'+D)
+
+c) b.c'.d' + a'.b'.c.d' + a.b'.c.d + a'.b.c.d
+
+d)(B+C). (C+D'). (A+B+D') .(A'+B'+C') . (B+C'+D).(A'+C'+D)
+
+e)~((~b + c + d)(~a + ~b + ~c + d)(~a + ~b + c + d)(~a + ~b + ~c + ~d))
+
+f) ~( (~B + ~C)(~C + ~D)(~A + ~B + ~D)(~A' + ~B' + ~C')(~B + ~C' + ~D)(~A' + ~C' + ~D) )
+
+02.) Implementar e testar a função lógica descrita em Verilog e no Logisim para obter a tabela-verdade:
+
+| x | y | s |
+|---|---|---|    SAÍDA: 0 1 0 0 
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
+
+
+03.) Implementar no Verilog e no Logisim a expressão abaixo para obter
+a tabela verdade:
+a b c | NOT(a) NOT(b) | Primeiro MUX | Segundo MUX | f(a, b, c)
+-----------------------------------------------------------
+0 0 0 |     1     1   |      0       |      1      |    0
+0 0 1 |     1     1   |      0       |      1      |    1
+0 1 0 |     1     0   |      1       |      1      |    1
+0 1 1 |     1     0   |      1       |      0      |    1
+1 0 0 |     0     1   |      0       |      1      |    0
+1 0 1 |     0     1   |      0       |      1      |    1
+1 1 0 |     0     0   |      1       |      1      |    1
+1 1 1 |     0     0   |      1       |      0      |    1
+
+SAÍDA:0 1 1 1 0 1 1 1
+
+04.) Dado o valor negativo, já em complemento de 2, 2310(4) , com 01 byte de representação,
+encontrar a soma binária desse valor com 56 (8) .Completar com zeros, se necessário.
+
+2310(4) = 10110100
+56 (8) = 101110
+SOMA: 11100010
+
+
+05.) Implementar no Verilog e no Logisim a expressão abaixo para obter
+a expressão por mintermos equivalente:
+
+NAND (XOR (a, b), NOR (NOT(a),NOT (b)))
+
+         = a' b' + a b
+
+
+
+
+
