@@ -1,0 +1,118 @@
+                                Pontifícia Universidade Católica de Minas Gerais 
+                                Instituto de Ciências Exatas e Informática – ICEI 
+                                        Arquitetura de Computadores I 
+ 
+ARQ1 - Recuperação 01 
+Tema: Sistemas de Numeração e circuitos combinatórios 
+Aluno: Cauã Costa Alves
+Matricula: 855926
+
+Exercícios:
+
+01.) Dado o mapa de Veitch-Karnaugh:
+ 0   a'b'c'd'   A+B+C+D      0             mintermos: 4,8,9,C,D,E 
+ 1   a'b'c'd    A+B+C+D'     0             maxtermos: 0,1,2,3,5,6,7,A,B,F
+ 2   a'b'c d'   A+B+C'+D     0             
+ 3   a'b'c d    A+B+C'+D'    0             
+ 4   a'b c'd'   A+B'+C+D     1      
+ 5   a'b c'd    A+B'+C+D'    0        
+ 6   a'b c d'   A+B'+C'+D    0        
+ 7   a'b c d    A+B'+C'+D'   0            
+ 8   a b'c'd'   A'+B+C+D     1       
+ 9   a b'c'd    A'+B+C+D'    1             
+ A   a b'c d'   A'+B+C'+D    0             
+ B   a b'c d    A'+B+C'+D'   0         
+ C   a b c'd'   A'+B'+C+D    1            
+ D   a b c'd    A'+B'+C+D'   1             
+ E   a b c d'   A'+B'+C'+D   1             
+ F   a b c d    A'+B'+C'+D'  0 
+ 
+ Determinar e implementar os circuitos equivalentes em Verilog e no Logisim: 
+  
+   a.) expressão canônica para SoP(a,b,c,d)
+        SoP(4,8,9,C,D,E)
+        (a'b c'd') + (a b'c'd') + (a b'c'd) + (a b c'd') + (a b c'd) + (a b c d')
+
+   b.) expressão canônica para PoS(A,B,C,D) 
+        PoS(0,1,2,3,5,6,7,A,B,F) 
+        (A+B+C+D) . (A+B+C+D') . (A+B+C'+D ) . (A+B+C'+D') . (A+B'+C+D') . (A+B'+C'+D) . (A+B'+C'+D') . (A'+B+C'+D) . (A'+B+C'+D') . (A'+B'+C'+D')
+
+   c.) simplificação de mintermos   por mapa de Veitch-Karnaugh 
+        xy\ wz 
+                   ~w~z ~wz  wz  w~z      (x.~w) + (y.~w.~z) + (x.y.~z) 
+                    00   01  11  10
+        ~x~y   00   0    0    0   0
+        ~xy    01   1    0    0   0
+        xy     11   1    1    0   1
+        x~y    10   1    1    0   0
+
+   d.) simplificação de MAXTERMOS por mapa de Veitch-Karnaugh 
+        XY\ WZ 
+                  WZ  W~Z ~W~Z ~WZ
+                  00   01  11  10       (X+Y) . (X+~Z) . (X+~W) . (~W+~Z) . (Y+~W)
+        XY   00   0    0    0   0         
+        X~Y  01   1    0    0   0         
+        ~X~Y 11   1    1    0   1
+        ~XY  10   1    1    0   0  
+
+   e.) expressão SoP equivalente com portas NAND de 2 entradas (usar dupla negação) 
+     SoP Padrão: (x.~w) + (y.~w.~z) + (x.y.~z) 
+     SoP NAND : ((x.~w)'.(y.~w.~z)'.(x.y.~z)')'
+
+   f .) expressão PoS equivalente com portas NOR de 2 entradas (usar dupla negação) 
+     PoS Padrão: (X+Y) . (X+~Z) . (X+~W) . (~W+~Z) . (Y+~W)
+     PoS NOR: ((X+Y)' + (X+~Z)' + (X+~W)' + (~W+~Z)' + (Y+~W)')'
+
+02.)Tabela verdade apos implementar no verilog e logisim:
+     a.)mux (a, not(a), c) 
+          0   a'b'c'd'   A+B+C+D      0      mintermos: 1,2
+          1   a'b'c'd    A+B+C+D'     1      maxtermos: 0,3
+          2   a'b'c d'   A+B+C'+D     1             
+          3   a'b'c d    A+B+C'+D'    0             
+
+
+     b.)mux (c, not(c), mux(a,not(a),b))     
+          0   a'b'c'd'   A+B+C+D      0       mintermos: 1,2,4,7
+          1   a'b'c'd    A+B+C+D'     1       maxtermos: 0,3,5,6
+          2   a'b'c d'   A+B+C'+D     1             
+          3   a'b'c d    A+B+C'+D'    0             
+          4   a'b c'd'   A+B'+C+D     1      
+          5   a'b c'd    A+B'+C+D'    0        
+          6   a'b c d'   A+B'+C'+D    0        
+          7   a'b c d    A+B'+C'+D'   1            
+
+
+
+03.)Tabela verdade apos implementar no verilog e logisim:
+     a.)(~a|b) & (b|~c) 
+          0   a'b'c'd'   A+B+C+D      1      mintermos: 0,2,3,6,7
+          1   a'b'c'd    A+B+C+D'     0      maxtermos: 1,4,5
+          2   a'b'c d'   A+B+C'+D     1             
+          3   a'b'c d    A+B+C'+D'    1             
+          4   a'b c'd'   A+B'+C+D     0      
+          5   a'b c'd    A+B'+C+D'    0        
+          6   a'b c d'   A+B'+C'+D    1        
+          7   a'b c d    A+B'+C'+D'   1                   
+
+
+     b.)(x'.y)'.(x'.y')' 
+          0   a'b'c'd'   A+B+C+D      0       mintermos: 2,3
+          1   a'b'c'd    A+B+C+D'     0       maxtermos: 0,1
+          2   a'b'c d'   A+B+C'+D     1             
+          3   a'b'c d    A+B+C'+D'    1             
+
+
+
+04.) Dado o valor +374.5(8), considerar a representação  
+     a.) com a menor quantidade de bits para sinal, expoente e mantissa 
+
+
+     b.) IEEE-754 para 1 bit para sinal, 8 bits para expoente (com corte = 127) e 23 bits de mantissa  
+
+
+
+05.) Calcular: 
+     a.) o valor binário igual a  NOT (174(8)) - C2,8(F8(16)) 
+
+     
+     b.) a tabela verdade para NOT( NAND ( XOR(a,b), NOR(a, NOT(b) ) ) )  
