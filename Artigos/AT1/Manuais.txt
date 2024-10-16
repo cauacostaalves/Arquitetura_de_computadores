@@ -204,3 +204,22 @@ Resumo:
         | Complexidade    | Adequado para projetos menores                   | Adequado para projetos grandes e complexos           |
         +-----------------+--------------------------------------------------+------------------------------------------------------+
 
+
+
+        
+        Extras:
+
+6. ARTIGOS RELACIONADOS:
+
+   Hwang, J. e Kim, H. (2020). A Comparative Study of CPLD and FPGA Architectures for Low-Power Applications. 
+ Journal of Low Power Electronics and Applications, 10(4), 23-32. DOI: 10.3390/jlpea10040023.
+
+   Zhang, Y. e Lee, W. (2019). FPGA vs CPLD: Which One to Choose for Your Next Design? IEEE Access, 7, 155632-155640.
+ DOI: 10.1109/ACCESS.2019.2957854.
+
+
+
+7. RESUMO COM LINGUAGEM LATEX: 
+
+
+
