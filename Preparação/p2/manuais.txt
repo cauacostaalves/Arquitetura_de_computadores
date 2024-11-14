@@ -1,0 +1,101 @@
+Pontifícia Universidade Católica de Minas Gerais
+Instituto de Ciências Exatas e Informática – ICEI
+Arquitetura de Computadores I
+ARQ1 - Preparação 02
+Aluno: Cauã Costa Alves
+Matricula: 855926
+Tema: Circuitos sequenciais e autômatos finitos
+
+Exercícios:
+Para as questões seguintes, supor a tabela abaixo.
+
+termos |m  | at | bt | c | at+1 | bt+1 | at | at+1 | Da |   JaKa   | Ta | SaRa     |bt | bt+1 | Db |   JbKb   | Tb | SbRb     |
+-------------------------------------------------------------------------------------------------------------------------------
+  000  |0  | 0  | 0  | 0 | 0    | 0    | 0  | 0    | 0  |00,10 = x0| 0  |00,10 = x0| 0 | 0    | 0  |00,10 = x0| 0  |00,10 = x0|
+  001  |1  | 0  | 0  | 1 | 0    | 1    | 0  | 0    | 0  |00,10 = x0| 0  |00,10 = x0| 0 | 1    | 1  |11,01 = x1| 1  |01        |
+  010  |2  | 0  | 1  | 0 | 0    | 1    | 0  | 0    | 0  |00,10 = x0| 0  |00,10 = x0| 1 | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x|
+  011  |3  | 0  | 1  | 1 | 1    | 1    | 0  | 1    | 1  |01,11 = x1| 1  |01        | 1 | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x|
+  100  |4  | 1  | 0  | 0 | 1    | 0    | 1  | 1    | 1  |01,00 = 0x| 0  |00,01 = 0x| 0 | 0    | 0  |00,10 = x0| 0  |00,10 = x0|
+  101  |5  | 1  | 0  | 1 | 0    | 0    | 1  | 0    | 0  |11,10 = 1x| 1  |10        | 0 | 0    | 0  |00,10 = x0| 0  |00,10 = x0|
+  110  |6  | 1  | 1  | 0 | 1    | 1    | 1  | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x| 1 | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x|
+  111  |7  | 1  | 1  | 1 | 1    | 0    | 1  | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x| 1 | 0    | 0  |11,10 = 1x| 1  |10        |
+
+Expressão Canônica Expressão Simplificada
+01.) [Texto] Montar as expressões por mintermos dos flip-flops
+
+a.) SoP (Da) = (a'.b.c) + (a.b'.c') + (a.b.c') + (a.b.c)  | a.) SoP (Db) = (a'.b'.c) + (a'.b.c') + (a'.b.c) + (a.b.c')     
+b.) SoP (Ja) = (a.b'.c)                                   | b.) SoP (Jb) = (a.b.c) 
+c.) SoP (Ka) = (a'.b.c)                                   | c.) SoP (Kb) = (a'.b'.c) 
+d.) SoP (Ta) = (a'.b.c) + (a.b'.c) +                      | d.) SoP (Tb) = (a'.b'.c) + (a.b.c) 
+
+
+
+02.) [Texto] Montar as expressões compactas por MAXTERMOS dos flip-flops
+
+a.) PoS (Da) = (A+B+C) . (A+B+C') . (A+B'+C) . (A'+B+C')                           | a.) PoS (Db) = (A+B+C) . (A'+B+C) . (A'+B+C') . (A'+B'+C')
+b.) PoS (Ja) = (A'+B+C) . (A'+B'+C) . (A'+B'+C')                                   | b.) PoS (Jb) = (A+B'+C) . (A+B'+C') . (A'+B'+C)
+c.) PoS (Ka) = (A+B+C) . (A+B+C') . (A+B'+C)                                       | c.) PoS (Kb) = (A+B+C) . (A'+B+C) . (A'+B+C')  
+d.) PoS (Ta) = (A+B+C) . (A+B+C') . (A+B'+C) . (A'+B+C) . (A'+B'+C) . (A'+B'+C')   | d.) PoS (Tb) = (A+B+C) . (A+B'+C) . (A+B'+C') . (A'+B+C) . (A'+B+C') . (A'+B'+C)
+
+
+
+03.) [Texto] Montar os mapas de Veitch-Karnaugh correspondentes e simplificar suas expressões SoP:
+
+Da           |      |Sa           |     |Ra           |     |Ta           |
+-------------|      |-------------|     |-------------|     |-------------|
+ab\c | 0 | 1 |      |ab\c | 0 | 1 |     |ab\c | 0 | 1 |     |ab\c | 0 | 1 |
+-----|---|---|      |-----|---|---|     |-----|---|---|     |-----|---|---|
+00   | 0 | 0 |      |00   | x | x |     |00   | 0 | 0 |     |00   | 0 | 0 |
+01   | 0 | 1 |      |01   | x | 0 |     |01   | 0 | 1 |     |01   | 0 | 1 |
+11   | 1 | 1 |      |11   | 0 | 0 |     |11   | x | x |     |11   | 0 | 0 |
+10   | 1 | 0 |      |10   | 0 | 1 |     |10   | x | 0 |     |10   | 1 | 0 |
+--------------------------------------------------------------------------- 
+
+Sb           |      |Rb                |Jb           |      |Kb           |
+-------------|      |--------------    |-------------|      |-------------|
+ab\c | 0 | 1 |      |ab\c | 0 | 1 |    |ab\c | 0 | 1 |      |ab\c | 0 | 1 |
+-----|---|---|      |-----|---|---|    |-----|---|---|      |-----|---|---|
+00   | x | 0 |      |00   | 0 | 1 |    |00   | x | x |      |00   | 0 | 1 |
+01   | 0 | 0 |      |01   | x | x |    |01   | 0 | 0 |      |01   | x | x |
+11   | 0 | 1 |      |11   | x | 1 |    |11   | 0 | 1 |      |11   | x | x |
+10   | x | x |      |10   | 0 | 0 |    |10   | x | x |      |10   | 0 | 0 |
+---------------------------------------------------------------------------
+
+Expressões SoP:
+
+Da = (a.c') + (b.c)
+Sa = (b.c)
+Ra = (b.c)
+Ta = (a'.b.c) + (a.b'.c')
+Sb = (a.c)
+Rb = (b) + (a.c)
+Jb = (a.c)
+Kb = (a'.c)
+
+
+
+04.) [Logisim] Montar os circuitos simplificados correspondentes:
+a.) Da
+b.) Ta
+c.) SbRb
+d.) Tb 
+
+|Tb           | SoP = (a'.b'.c) + (a.b.c)
+|-------------|
+|ab\c | 0 | 1 |
+|-----|---|---|
+|00   | 0 | 1 |
+|01   | 0 | 0 |
+|11   | 0 | 1 |
+|10   | 0 | 0 |
+---------------
+
+
+
+05.) [Logisim]
+a.) Montar um registrador de deslocamento para a direita (a,b,c,d) com carga inicial mediante LOAD.
+b.) Montar um registrador de deslocamento para a esquerda (a,b,c,d) com carga inicial mediante LOAD.
+
+Extras
+06.) Montar um reconhecedor por Mealy, com repetição, para as sequências 000 e 111.
+07.) Montar um reconhecedor por Moore, com repetição, para as sequências 000 e 111
