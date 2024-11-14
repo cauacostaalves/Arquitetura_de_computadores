@@ -36,3 +36,33 @@ b.) PoS (Ja) =                                                                  
 c.) PoS (Ka) =                                                                     | c.) PoS (Kb) = 
 d.) PoS (Ta) =  (A+B+C) . (A+B+C') . (A+B'+C) . (A'+B+C) . (A'+B'+C) . (A'+B'+C')  | d.) PoS (Tb) = (A+B+C) . (A+B'+C) . (A+B'+C') . (A'+B+C) . (A'+B+C') . (A'+B'+C)
 
+03.) [Texto] Montar os mapas de Veitch-Karnaugh correspondentes e simplificar suas expressões SoP:
+
+Da             Sa            Ra        | Ta
+-------------------------------------------------|
+ab\c 0 1       ab\c 0 1      ab\c 0 1  | ab\c 0 1|
+00             00         |  00          00
+01             01            01          01
+11             11            11          11
+10             10            10          10
+
+Sb           Rb            Jb           Kb
+ab\c 0 1     ab\c 0 1      ab\c 0 1     ab\c 0 1
+00           00            00           00
+01           01            01           01
+11           11            11           11
+10           10            10           10
+
+
+
+04.) [Logisim] Montar os circuitos simplificados correspondentes:
+a.) Da
+b.) Ta
+c.) SbRb
+d.) Tb
+05.) [Logisim]
+a.) Montar um registrador de deslocamento para a direita (a,b,c,d) com carga inicial mediante LOAD.
+b.) Montar um registrador de deslocamento para a esquerda (a,b,c,d) com carga inicial mediante LOAD.
+Extras
+06.) Montar um reconhecedor por Mealy, com repetição, para as sequências 000 e 111.
+07.) Montar um reconhecedor por Moore, com repetição, para as sequências 000 e 111
