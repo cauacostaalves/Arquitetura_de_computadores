@@ -20,7 +20,7 @@ termos |m  | at | bt | c | at+1 | bt+1 | at | at+1 | Da |   JaKa   | Ta | SaRa  
   110  |6  | 1  | 1  | 0 | 1    | 1    | 1  | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x| 1 | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x|
   111  |7  | 1  | 1  | 1 | 1    | 0    | 1  | 1    | 1  |00,01 = 0x| 0  |00,01 = 0x| 1 | 0    | 0  |11,10 = 1x| 1  |10        |
 
-Expressão Canônica Expressão Simplificada
+Expressão Canônica                                                Expressão Simplificada
 01.) [Texto] Montar as expressões por mintermos dos flip-flops
 
 a.) SoP (Da) = (a'.b.c) + (a.b'.c') + (a.b.c') + (a.b.c)  | a.) SoP (Db) = (a'.b'.c) + (a'.b.c') + (a'.b.c) + (a.b.c')     
