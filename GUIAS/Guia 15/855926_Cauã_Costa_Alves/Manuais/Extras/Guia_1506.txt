@@ -1,0 +1,22 @@
+// Guia_1506.txt 
+// 855926 - Cauã Costa Alves
+// 
+// Implementar um programa (Guia_1506.txt) para o processador 8085 para 
+// calcular o resultado da expressão aritmética abaixo, 
+// usando dados com 8 bits. 
+//  
+// dado03 = 3 * dado01 - 2 * dado02 
+
+// Area de código    ; Significado               // Comentario 
+LXI H, dado1         ; HL <- addr(dado1)         // Carrega o endereço de dado1 nos registradores HL
+MOV A, M             ; A  <- MEM[HL]            // Move o conteúdo da memória no endereço em HL (dado1) para A
+MOV B, A             ; B  <- A                  // Armazena dado1 em B
+ADD A                ; A  <- A + A              // Multiplica dado1 por 2
+ADD B                ; A  <- A + B              // Multiplica dado1 por 3 (2*dado1 + dado1)
+MOV C, A             ; C  <- A                  // Armazena 3*dado1 em C
+INX H                ; HL <- HL + 1             // Incrementa HL para apontar para dado2
+MOV A, M             ; A  <- MEM[HL]            // Move o conteúdo de dado2 para A
+ADD A                ; A  <- A + A              // Multiplica dado2 por 2
+SUB C                ; A  <- C - (2*dado2)      // Subtrai 2*dado2 de 3*dado1
+STA dado3            ; MEM[dado3] <- A          // Armazena o resultado em dado3
+HLT                  ; halt                     // Interrompe a execução

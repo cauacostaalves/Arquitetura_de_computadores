@@ -1,0 +1,24 @@
+// Guia_1507.txt 
+// 855926 - Cauã Costa Alves
+// 
+// Implementar um programa (Guia_1507.txt) para o processador 8085 para 
+// calcular o resultado da expressão aritmética abaixo, 
+// usando dados com 8 bits. 
+// DICA: Se usar deslocamentos/rotações para multiplicar e dividir, 
+//       levar em consideração o bit do sinal. 
+//       Melhor usar somas e comparações. 
+//  
+// dado03 = dado01 % 2 + dado02 / 4 
+
+// Area de código    ; Significado               // Comentario 
+LXI H, dado1         ; HL <- addr(dado1)         // Carrega o endereço de dado1 nos registradores HL
+MOV A, M             ; A  <- MEM[HL]            // Move o conteúdo da memória no endereço em HL (dado1) para A
+ANI 01H              ; A  <- A & 01H            // Calcula dado01 % 2 (mantém apenas o bit menos significativo)
+MOV C, A             ; C  <- A                  // Armazena dado01 % 2 em C
+INX H                ; HL <- HL + 1             // Incrementa HL para apontar para dado2
+MOV A, M             ; A  <- MEM[HL]            // Move o conteúdo de dado2 para A
+RRC                  ; A  <- A >> 1             // Divide dado2 por 2
+RRC                  ; A  <- A >> 1             // Divide novamente (A <- A / 4)
+ADD C                ; A  <- C + A              // Soma dado01 % 2 com dado02 / 4
+STA dado3            ; MEM[dado3] <- A          // Armazena o resultado em dado3
+HLT                  ; halt                     // Interrompe a execução
