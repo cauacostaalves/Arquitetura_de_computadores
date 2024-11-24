@@ -1,0 +1,27 @@
+// Guia_1605.txt
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Conversão de BCD para Hexadecimal
+// O valor BCD está armazenado em 0050h
+// O valor hexadecimal será armazenado em 0052h
+
+JMP MAIN  // Função detour
+
+// Função para converter BCD em Hexadecimal
+F_BCD_TO_HEX:
+  MOV A, M    // A = valor BCD
+  MVI B, 0Ah  // B = 10 (base decimal)
+  CALL CONVERT
+  STA 0052h   // Salva o resultado hexadecimal
+  RET
+
+// Função de conversão
+CONVERT:
+  MOV C, A    // C = A
+  MOV D, B    // D = B
+  MVI E, 00h  // Zera o registro E
+  DIV B       // Divide por 10
+  MOV M, A    // Armazena o resultado em memória
+  MOV A, C    // Volta o valor para A
+  HLT
+END:

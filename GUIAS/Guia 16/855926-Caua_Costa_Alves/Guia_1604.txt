@@ -1,0 +1,28 @@
+// Guia_1604.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Encontrar o maior valor de um arranjo
+// O arranjo está armazenado a partir de 0050h
+
+JMP MAIN // Função detour
+
+// Função para encontrar o maior valor
+F_MAX:
+  MVI D, 00h // D = maior valor
+  MOV A, M   // A = primeiro valor
+  MOV C, A   // C = maior até o momento
+  INX H      // Incrementa o ponteiro
+LOOP:
+  MOV A, M   // A = próximo valor
+  CMP C      // Compara A com o maior valor
+  JC NEXT    // Se A < maior, vai para o próximo
+  MOV C, A   // Atualiza o maior valor
+NEXT:
+  INX H      // Incrementa o ponteiro
+  MOV A, M   // Verifica se há mais valores
+  JZ DONE    // Se não há mais valores, termina
+  JMP LOOP
+DONE:
+  STA 0052h  // Salva o maior valor
+  HLT
+END:

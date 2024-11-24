@@ -1,0 +1,36 @@
+// Guia_1602.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Divisão de dois números de 8 bits (IDIV)
+// O primeiro número é armazenado em 0050h
+// O segundo número é armazenado em 0051h
+// O quociente será armazenado em 0052h
+// O resto será armazenado em 0053h
+
+JMP MAIN  // Função detour
+
+// Função IDIV
+F_IDIV:
+  MVI D, 00h  // D = 0, quociente
+  MVI E, 00h  // E = 0, resto
+  MOV B, C    // B = C (divisor)
+  MOV A, M    // A = M[0050h], dividendo
+  CALL DIVIDE // Realiza a divisão
+  RET
+
+// Função DIVIDE (subtrações sucessivas)
+DIVIDE:
+  MOV B, M    // M[0051h] = divisor
+  MOV A, M    // A = dividendo
+  LOOP:
+    SUB B     // A = A - B
+    JC NO_SUB // Se A - B < 0, não subtrai mais
+    MOV D, A  // Salva o valor de A em D
+    INX H     // Incrementa H para atualizar o divisor
+    MOV C, M  // Atualiza C
+    CALL DIVIDE
+NO_SUB: 
+  STA 0052h   // Salva o quociente
+  STA 0053h   // Salva o resto
+  HLT
+END:

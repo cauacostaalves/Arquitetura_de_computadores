@@ -1,0 +1,43 @@
+// Guia_1601.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Multiplicação de dois números de 8 bits (IMUL)
+// O primeiro número é armazenado em 0050h
+// O segundo número é armazenado em 0051h
+// O resultado será armazenado em 0052h e 0053h
+
+JMP MAIN  // Função detour
+
+// Função IMUL
+F_IMUL: 
+  MVI D, 00h  // D = 0, resultado alto
+  MVI E, 00h  // E = 0, resultado baixo
+  MOV B, C    // B = C (multiplicando)
+  MOV A, B    // A = B
+  CALL MULT   // Realiza a multiplicação
+  RET
+
+// Função MULT (multiplicação por soma sucessiva)
+MULT: 
+  MOV A, B    // A = B
+  MOV C, M    // C = M[0050h], primeiro número
+  MVI D, 00h  // Zera D (parte do resultado)
+  MVI E, 00h  // Zera E (parte do resultado)
+  LOOP:
+    ADD C     // A = A + C
+    MOV B, A  // Armazena A novamente em B
+    DCR B     // Decrementa B
+    JNZ LOOP  // Repete enquanto B != 0
+  STA 0052h   // Armazena o resultado em 0052h
+  HLT         // Finaliza
+
+// Main program
+MAIN: 
+  LXI H, 0050h  // HL = 0050h (primeiro número)
+  MOV C, M      // C = MEM[0050]
+  INX H         // HL = HL + 1 (indica o segundo número)
+  MOV B, M      // B = MEM[0051]
+  CALL F_IMUL   // Chama a função de multiplicação
+  STA 0052h     // Armazena o resultado
+  HLT
+END:

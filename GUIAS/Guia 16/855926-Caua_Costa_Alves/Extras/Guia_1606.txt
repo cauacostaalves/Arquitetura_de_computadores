@@ -1,0 +1,32 @@
+// Guia_1606.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Cálculo do quadrado de um número de 8 bits (SQR)
+// O número estará armazenado em 0050h
+// O quadrado será armazenado em 0052h e 0053h
+
+JMP MAIN  // Função detour
+
+// Função SQR
+F_SQR: 
+  MVI D, 00h   // Zera o registro D, para armazenar o resultado alto
+  MVI E, 00h   // Zera o registro E, para armazenar o resultado baixo
+  MOV A, M     // A = número a ser quadrado
+  CALL CALC_SQR // Chama a função de cálculo do quadrado
+  RET
+
+// Função de cálculo do quadrado por somas sucessivas
+CALC_SQR:
+  MOV B, A    // Armazena A (número original) em B
+  MOV C, A    // Armazena A (número original) em C
+  MVI A, 00h  // Zera A (soma do quadrado)
+  MOV D, A    // Zera D (soma do quadrado)
+LOOP_SQR:
+  ADD C       // A = A + C
+  MOV E, A    // Armazena o valor de A em E (parte do quadrado)
+  MOV A, B    // A = número original
+  DCR B       // Decrementa B
+  JNZ LOOP_SQR // Repete até B == 0
+  STA 0052h   // Armazena o resultado final em 0052h
+  HLT         // Finaliza
+END:

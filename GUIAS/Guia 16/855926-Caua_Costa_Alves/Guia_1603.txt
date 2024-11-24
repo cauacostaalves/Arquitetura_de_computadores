@@ -1,0 +1,29 @@
+// Guia_1603.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Resto da divisão de dois números de 8 bits (IMOD)
+// O primeiro número é armazenado em 0050h
+// O segundo número é armazenado em 0051h
+// O resto será armazenado em 0052h
+
+JMP MAIN  // Função detour
+
+// Função IMOD
+F_IMOD:
+  MVI D, 00h  // D = 0, quociente
+  MVI E, 00h  // E = 0, resto
+  MOV A, C    // A = C (dividendo)
+  MOV B, M    // B = M[0051h] (divisor)
+  CALL MODULO // Realiza a subtração sucessiva
+  RET
+
+// Função MODULO (subtrações sucessivas)
+MODULO:
+  SUB B      // A = A - B
+  JC NO_MOD  // Se A - B < 0, não subtrai mais
+  MOV D, A   // Atualiza D
+  JUMP MODULO
+NO_MOD:
+  STA 0052h  // Salva o resto
+  HLT
+END:

@@ -1,0 +1,40 @@
+// Guia_1607.txt 
+// Nome: Cauã Costa Alves
+// Matrícula: 855926
+// Cálculo do fatorial de um número de 8 bits (FAT)
+// O número estará armazenado em 0050h
+// O fatorial será armazenado em 0052h e 0053h
+
+JMP MAIN  // Função detour
+
+// Função FAT
+F_FAT: 
+  MVI D, 01h   // Zera o registro D (acumulador do fatorial) e inicializa com 1
+  MVI E, 00h   // Zera o registro E
+  MOV A, M     // A = número a ser calculado o fatorial
+  CALL CALC_FAT // Chama a função para calcular o fatorial
+  RET
+
+// Função de cálculo do fatorial (multiplicação sucessiva)
+CALC_FAT:
+  MOV B, A    // Armazena o número em B
+  MVI C, 01h  // Inicializa o acumulador do fatorial com 1
+LOOP_FAT:
+  MOV A, B    // A = número
+  MOV D, C    // D = acumulador do fatorial
+  CALL MULTIPLY // Multiplica D * A e armazena em D
+  MOV C, D    // Atualiza o acumulador do fatorial
+  DCR B       // Decrementa o número
+  JNZ LOOP_FAT // Repete até B == 0
+  STA 0052h   // Armazena o fatorial em 0052h
+  HLT         // Finaliza
+
+// Função MULTIPLY (multiplicação)
+MULTIPLY:
+  MOV D, C    // D = C (fatorial)
+  MOV E, A    // E = A (número)
+  MVI F, 00h  // F = 0 (soma do produto)
+  ADD E       // F = F + E
+  MOV C, F    // Atualiza C
+  RET
+END:
